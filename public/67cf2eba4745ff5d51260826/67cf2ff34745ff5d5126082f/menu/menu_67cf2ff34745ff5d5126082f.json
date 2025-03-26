@@ -1,0 +1,155 @@
+{
+  "restaurant_id": "67cf2ff34745ff5d5126082f",
+  "menu": [
+    {
+      "category": "Antipasti",
+      "dishes": [
+        {
+          "name": "Bruschetta al Pomodoro",
+          "description": "Pane tostato con pomodoro, aglio e basilico",
+          "price": 5.00
+        },
+        {
+          "name": "Carpaccio di Manzo",
+          "description": "Manzo crudo tagliato sottile con rucola e grana",
+          "price": 12.00
+        },
+        {
+          "name": "Insalata Caprese",
+          "description": "Mozzarella di bufala con pomodoro e basilico",
+          "price": 8.00
+        },
+        {
+          "name": "Affettati misti",
+          "description": "Selezione di salumi italiani con gnocco fritto",
+          "price": 14.00
+        }
+      ]
+    },
+    {
+      "category": "Primi",
+      "dishes": [
+        {
+          "name": "Spaghetti alla Carbonara",
+          "description": "Con guanciale, uovo e pecorino",
+          "price": 12.00
+        },
+        {
+          "name": "Risotto allo Zafferano",
+          "description": "Con zafferano e parmigiano",
+          "price": 14.00
+        },
+        {
+          "name": "Tagliatelle al Ragù",
+          "description": "Pasta all'uovo con ragù di carne",
+          "price": 13.00
+        },
+        {
+          "name": "Penne all'Arrabbiata",
+          "description": "Con sugo di pomodoro piccante",
+          "price": 10.00
+        }
+      ]
+    },
+    {
+      "category": "Secondi",
+      "dishes": [
+        {
+          "name": "Bistecca alla Fiorentina",
+          "description": "Costata di manzo alla griglia",
+          "price": 22.00
+        },
+        {
+          "name": "Scaloppine al Limone",
+          "description": "Fettine di vitello in salsa al limone",
+          "price": 16.00
+        },
+        {
+          "name": "Filetto di Branzino",
+          "description": "Al forno con patate e olive",
+          "price": 20.00
+        },
+        {
+          "name": "Pollo alla Cacciatora",
+          "description": "Con pomodoro, olive e capperi",
+          "price": 15.00
+        }
+      ]
+    },
+    {
+      "category": "Contorni",
+      "dishes": [
+        {
+          "name": "Patate al Forno",
+          "description": "Con rosmarino e olio extravergine",
+          "price": 5.00
+        },
+        {
+          "name": "Insalata Mista",
+          "description": "Con lattuga, pomodoro e carote",
+          "price": 4.00
+        },
+        {
+          "name": "Spinaci al Burro",
+          "description": "Saltati in padella con burro",
+          "price": 5.00
+        },
+        {
+          "name": "Verdure Grigliate",
+          "description": "Melanzane, zucchine e peperoni alla griglia",
+          "price": 6.00
+        }
+      ]
+    },
+    {
+      "category": "Dolci",
+      "dishes": [
+        {
+          "name": "Tiramisù",
+          "description": "Con savoiardi, mascarpone e caffè",
+          "price": 6.00
+        },
+        {
+          "name": "Panna Cotta",
+          "description": "Con salsa ai frutti di bosco",
+          "price": 5.00
+        },
+        {
+          "name": "Torta della Nonna",
+          "description": "Con crema pasticcera e pinoli",
+          "price": 5.00
+        },
+        {
+          "name": "Cannoli Siciliani",
+          "description": "Con ricotta e gocce di cioccolato",
+          "price": 6.00
+        }
+      ]
+    },
+    {
+      "category": "Bevande",
+      "dishes": [
+        {
+          "name": "Acqua Naturale",
+          "description": "Bottiglia da 0,5L",
+          "price": 1.50
+        },
+        {
+          "name": "Coca Cola",
+          "description": "Lattina da 0,33L",
+          "price": 2.50
+        },
+        {
+          "name": "Vino Rosso della Casa",
+          "description": "Calice di vino rosso",
+          "price": 4.00
+        },
+        {
+          "name": "Birra Artigianale",
+          "description": "Bottiglia da 0,33L",
+          "price": 5.00
+        }
+      ]
+    }
+  ]
+}

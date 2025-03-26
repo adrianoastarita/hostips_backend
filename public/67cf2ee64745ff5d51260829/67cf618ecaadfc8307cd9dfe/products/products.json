@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "nome": "Gommone",
+      "prezzo": 40
+    },
+    {
+      "id": 2,
+      "nome": "SUP",
+      "prezzo": 10
+    },
+    {
+      "id": 3,
+      "nome": "Pedalò",
+      "prezzo": 20
+    }
+  ]
+  

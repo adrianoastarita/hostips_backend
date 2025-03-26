@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "nome": "Bicicletta",
+      "prezzo": 5
+    },
+    {
+      "id": 2,
+      "nome": "Risciò",
+      "prezzo": 15
+    },
+    {
+      "id": 3,
+      "nome": "Bicicletta elettrica",
+      "prezzo": 9
+    }
+  ]
+  

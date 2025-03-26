@@ -1,0 +1,60 @@
+{
+    "restaurant_id": "67cf2ff94745ff5d51260832",
+    "menu": [
+      {
+        "category": "Antipasti",
+        "dishes": [
+          { "name": "Insalata di polpo", "description": "Polpo lesso con patate, prezzemolo e olio d'oliva", "price": 14.00 },
+          { "name": "Crudo di pesce", "description": "Selezione di pesce crudo freschissimo (tonno, salmone, branzino)", "price": 18.00 },
+          { "name": "Caponata di mare", "description": "Misto di pesce in agrodolce con verdure", "price": 12.00 },
+          { "name": "Tartare di tonno", "description": "Tonno crudo condito con olio, lime e pepe nero", "price": 15.00 }
+        ]
+      },
+      {
+        "category": "Primi",
+        "dishes": [
+          { "name": "Linguine allo scoglio", "description": "Linguine con cozze, vongole, calamari e gamberi", "price": 18.00 },
+          { "name": "Risotto alla pescatora", "description": "Risotto con gamberi, calamari, cozze, vongole e pomodorini", "price": 19.00 },
+          { "name": "Ravioli ripieni di pesce", "description": "Ravioli freschi con ripieno di pesce e salsa al burro e salvia", "price": 17.00 },
+          { "name": "Tagliatelle al granchio", "description": "Tagliatelle fresche con granchio e pomodorini", "price": 20.00 }
+        ]
+      },
+      {
+        "category": "Secondi",
+        "dishes": [
+          { "name": "Branzino al sale", "description": "Branzino intero cotto al sale con contorno di verdure grigliate", "price": 22.00 },
+          { "name": "Frittura di pesce", "description": "Calamari, gamberi e alici fritti in pastella", "price": 18.00 },
+          { "name": "Grigliata di scampi", "description": "Scampi grigliati con olio d'oliva e limone", "price": 25.00 },
+          { "name": "Filetto di cernia", "description": "Cernia grigliata con pomodorini e olive nere", "price": 21.00 }
+        ]
+      },
+      {
+        "category": "Contorni",
+        "dishes": [
+          { "name": "Zucchine alla scapece", "description": "Zucchine fritte marinate nell'aceto", "price": 5.00 },
+          { "name": "Pomodorini gratinati", "description": "Pomodorini al forno con pangrattato e origano", "price": 4.50 },
+          { "name": "Patate novelle al rosmarino", "description": "Patate novelle cotte al forno con rosmarino e olio d'oliva", "price": 4.00 },
+          { "name": "Fagiolini all'aglio", "description": "Fagiolini saltati in padella con aglio e olio", "price": 4.00 }
+        ]
+      },
+      {
+        "category": "Dolci",
+        "dishes": [
+          { "name": "Tiramisu al limone", "description": "Tiramisu con crema al limone e savoiardi", "price": 5.50 },
+          { "name": "Zuppa inglese", "description": "Tradizionale dessert con crema pasticcera e pan di spagna", "price": 4.50 },
+          { "name": "Panna cotta alla vaniglia", "description": "Panna cotta con salsa di frutti di bosco", "price": 4.00 },
+          { "name": "Crema catalana", "description": "Crema pasticcera con caramello croccante", "price": 5.00 }
+        ]
+      },
+      {
+        "category": "Bevande",
+        "dishes": [
+          { "name": "Acqua frizzante", "description": "Bottiglia da 500ml", "price": 1.50 },
+          { "name": "Vino rosato", "description": "Calice di vino rosato della casa", "price": 4.50 },
+          { "name": "Birra artigianale", "description": "Birra chiara artigianale in bottiglia", "price": 5.00 },
+          { "name": "Grappa di pesche", "description": "Grappa artigianale aromatizzata alla pesca", "price": 4.50 }
+        ]
+      }
+    ]
+  }
+  

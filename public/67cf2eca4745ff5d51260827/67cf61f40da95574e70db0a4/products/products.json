@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "nome": "borsa",
+    "prezzo": 49
+  },
+  {
+    "id": 2,
+    "nome": "portafogli",
+    "prezzo": 25
+  },
+  {
+    "id": 3,
+    "nome": "portachiavi",
+    "prezzo": 15
+  }
+]

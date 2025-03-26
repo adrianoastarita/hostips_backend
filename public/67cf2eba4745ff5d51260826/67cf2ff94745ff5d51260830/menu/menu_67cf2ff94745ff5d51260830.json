@@ -1,0 +1,51 @@
+{
+    "restaurant_id": "67cf2ff94745ff5d51260830",
+    "menu": [
+    {
+        "category": "Per iniziare",
+        "dishes": [
+        { "name": "Bruschette", "description": "Pane tostato con pomodoro e basilico", "price": 5.00 },
+        { "name": "Olive", "description": "Olive miste condite", "price": 3.50 },
+        { "name": "Fritto misto", "description": "Anelli di calamari e gamberetti", "price": 8.00 },
+        { "name": "Mozzarella in carrozza", "description": "Mozzarella fritta con acciughe", "price": 6.50 }
+        ]
+    },
+    {
+        "category": "Pizze",
+        "dishes": [
+        { "name": "Margherita", "description": "Pomodoro, mozzarella e basilico", "price": 7.50 },
+        { "name": "Diavola", "description": "Pomodoro, mozzarella e salame piccante", "price": 8.50 },
+        { "name": "Quattro stagioni", "description": "Pomodoro, mozzarella, carciofi, funghi, prosciutto, olive", "price": 9.00 },
+        { "name": "Capricciosa", "description": "Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi, olive", "price": 9.50 }
+        ]
+    },
+    {
+        "category": "Calzoni",
+        "dishes": [
+        { "name": "Classico", "description": "Pomodoro, mozzarella e prosciutto cotto", "price": 8.00 },
+        { "name": "Ripieno di verdure", "description": "Mozzarella, zucchine, melanzane e peperoni", "price": 8.50 },
+        { "name": "Salsiccia e friarielli", "description": "Salsiccia, friarielli e mozzarella", "price": 9.00 },
+        { "name": "Prosciutto e funghi", "description": "Mozzarella, prosciutto cotto e funghi", "price": 8.50 }
+        ]
+    },
+    {
+        "category": "Dessert",
+        "dishes": [
+        { "name": "Tiramisù", "description": "Con savoiardi, mascarpone e caffè", "price": 4.50 },
+        { "name": "Cannolo siciliano", "description": "Con ricotta e gocce di cioccolato", "price": 5.00 },
+        { "name": "Cheesecake", "description": "Con base di biscotti e crema al formaggio", "price": 4.50 },
+        { "name": "Panna cotta", "description": "Con salsa ai frutti di bosco", "price": 4.00 }
+        ]
+    },
+    {
+        "category": "Bevande",
+        "dishes": [
+        { "name": "Acqua naturale", "description": "Bottiglia da 500ml", "price": 1.50 },
+        { "name": "Coca Cola", "description": "Lattina da 330ml", "price": 2.00 },
+        { "name": "Birra artigianale", "description": "Birra chiara non filtrata", "price": 5.00 },
+        { "name": "Vino rosso", "description": "Bicchiere di vino rosso della casa", "price": 4.00 }
+        ]
+    }
+    ]
+  }
+  

@@ -1,0 +1,60 @@
+{
+    "restaurant_id": "67cf2ff94745ff5d51260831",
+    "menu": [
+      {
+        "category": "Antipasti",
+        "dishes": [
+          { "name": "Insalata di mare", "description": "Polpo, calamari, gamberi e cozze con olio e limone", "price": 12.00 },
+          { "name": "Carpaccio di tonno", "description": "Tonno crudo marinato con olio, limone e pepe rosa", "price": 14.00 },
+          { "name": "Cozze alla marinara", "description": "Cozze cotte con vino bianco, aglio e prezzemolo", "price": 10.00 },
+          { "name": "Gamberetti in salsa rosa", "description": "Gamberetti freschi serviti con salsa rosa", "price": 9.00 }
+        ]
+      },
+      {
+        "category": "Primi",
+        "dishes": [
+          { "name": "Spaghetti alle vongole", "description": "Spaghetti con vongole, aglio, olio e prezzemolo", "price": 16.00 },
+          { "name": "Risotto ai frutti di mare", "description": "Riso con cozze, vongole, gamberi e calamari", "price": 18.00 },
+          { "name": "Linguine all'astice", "description": "Linguine con astice e pomodorini", "price": 22.00 },
+          { "name": "Pasta al nero di seppia", "description": "Tagliolini freschi con nero di seppia", "price": 15.00 }
+        ]
+      },
+      {
+        "category": "Secondi",
+        "dishes": [
+          { "name": "Grigliata mista di pesce", "description": "Gamberi, calamari e seppie alla griglia", "price": 20.00 },
+          { "name": "Orata al forno", "description": "Orata al forno con patate e pomodorini", "price": 18.00 },
+          { "name": "Frittura di calamari", "description": "Calamari fritti con salsa tartara", "price": 17.00 },
+          { "name": "Filetto di branzino", "description": "Filetto di branzino alla griglia con verdure", "price": 19.00 }
+        ]
+      },
+      {
+        "category": "Contorni",
+        "dishes": [
+          { "name": "Patate al forno", "description": "Patate con rosmarino e olio d'oliva", "price": 4.00 },
+          { "name": "Insalata mista", "description": "Lattuga, pomodori e carote con olio e limone", "price": 3.50 },
+          { "name": "Verdure grigliate", "description": "Melanzane, zucchine e peperoni grigliati", "price": 5.00 },
+          { "name": "Spinaci al burro", "description": "Spinaci saltati con burro e parmigiano", "price": 4.50 }
+        ]
+      },
+      {
+        "category": "Dolci",
+        "dishes": [
+          { "name": "Tiramisù", "description": "Con savoiardi, mascarpone e caffè", "price": 5.00 },
+          { "name": "Panna cotta", "description": "Con salsa ai frutti di bosco", "price": 4.50 },
+          { "name": "Sorbetto al limone", "description": "Fresco sorbetto al limone", "price": 4.00 },
+          { "name": "Semifreddo alla mandorla", "description": "Semifreddo con granella di mandorle", "price": 5.50 }
+        ]
+      },
+      {
+        "category": "Bevande",
+        "dishes": [
+          { "name": "Acqua naturale", "description": "Bottiglia da 500ml", "price": 1.50 },
+          { "name": "Vino bianco", "description": "Calice di vino bianco della casa", "price": 4.00 },
+          { "name": "Prosecco", "description": "Bicchiere di prosecco", "price": 5.00 },
+          { "name": "Limoncello", "description": "Bicchierino di limoncello artigianale", "price": 3.00 }
+        ]
+      }
+    ]
+  }
+  

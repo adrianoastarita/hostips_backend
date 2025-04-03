@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const loginRoutes = require('./routes/login_routes');
-const aptRoutes = require('./routes/apt_routes');
+const guest_loginRoutes = require('./routes/guest/login_routes');
+const guest_aptRoutes = require('./routes/guest/apt_routes');
+const host_loginRoutes = require('./routes/host/login_routes');
+const host_addbookingRoutes = require('./routes/host/addbooking_routes');
 const path = require('path');  // Per gestire i percorsi dei file
 
 // Carico le variabili di ambiente
@@ -20,8 +22,8 @@ const app = express();
 app.use(cors()); // Abilita CORS per consentire richieste dal frontend
 app.use(bodyParser.json()); // Consente di fare il parsing delle richieste JSON
 
-// Servire i file statici dalla cartella 'src/db_partner'
-app.use('/public', express.static(path.join(__dirname, '..', 'public')));
+// Servire i file statici dalla cartella 'public'
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Connessione a MongoDB
 const connectDB = async () => {
@@ -38,11 +40,17 @@ const connectDB = async () => {
 // Connessione al database
 connectDB();
 
-// Aggiungiamo le rotte per la gestione del login
-app.use('/api', loginRoutes);  // Nuovo nome del file delle rotte
+// Aggiungiamo le rotte per la gestione del login (guest)
+app.use('/api', guest_loginRoutes);  // Nuovo nome del file delle rotte
 
 // Aggiungiamo le rotte per la gestione dei dati degli appartamenti
-app.use('/api', aptRoutes);  // Nuovo nome del file delle rotte
+app.use('/api', guest_aptRoutes);  // Nuovo nome del file delle rotte
+
+// Aggiungiamo le rotte per la gestione del login (host)
+app.use('/api', host_loginRoutes);  // Nuovo nome del file delle rotte
+
+// Aggiungiamo le rotte per la gestione dei dati dell'host
+app.use('/api', host_addbookingRoutes);  // Nuovo nome del file delle rotte
 
 // Configurazione della porta
 const PORT = process.env.PORT || 3000;

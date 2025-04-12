@@ -39,11 +39,15 @@ router.get('/zone-data/:zonaID', async (req, res) => {
   }
 });
 
-router.get('/partner-zone/:zonaID', async (req, res) => {
+router.get('/partner-zone/:zonaID?', async (req, res) => {
   const { zonaID } = req.params;
   try {
+    const query = {};
+    if (zonaID) {
+      query.zonaID = zonaID; // Se è stato passato, aggiungi alla query
+    }
     // Prendiamo tutti i partner della zona richiesta
-    const partners = await Partner.find({ zonaID });
+    const partners = await Partner.find(query);
 
     if (!partners.length) {
       return res.status(404).json({ message: 'Nessun partner trovato per questa zona' });
@@ -72,12 +76,17 @@ router.get('/partner-zone/:zonaID', async (req, res) => {
   }
 });
 
-router.get('/partner-list/:zonaID/:catID', async (req, res) => {
-  const { zonaID, catID } = req.params;
+router.get('/partner-list', async (req, res) => {
+  const { zonaID, catID, partnerID } = req.query;
 
   try {
+    const query = {};
+    if (zonaID) query.zonaID = zonaID;
+    if (catID) query.catID = catID;
+    if (partnerID) query._id = partnerID;
+    console.log('(BACKEND) QUERY --> ',query);
     // Query per cercare i partner con entrambi i parametri
-    const partners = await Partner.find({ zonaID: zonaID, catID: catID });
+    const partners = await Partner.find(query);
     
     if (partners && partners.length > 0) {
       return res.json(partners);

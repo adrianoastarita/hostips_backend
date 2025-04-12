@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione Tavolo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            align-items: center,
+            justify-content: center,
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .topSection, .bottomSection {
+            padding: 20px;
+            background-color: white;
+        }
+
+        .topSection {
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .guestSection, .timeSection {
+            width: 48%; /* Ognuna occupa il 50% meno un piccolo margine */
+            display: flex;
+            align-items: center; /* Allinea gli elementi orizzontalmente */
+        }
+
+        .guestSection {
+            justify-content: flex-start; /* Allinea gli elementi a sinistra */
+        }
+
+        .timeSection {
+            justify-content: flex-end; /* Allinea gli elementi a destra */
+        }
+
+        .mainSection {
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            margin: 0; /* Azzerare i margini */
+            padding: 0; /* Azzerare il padding */
+        }
+        
+        .bottomSection {
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Per il bottone */
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        /* Bottone */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .confirmation {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .guestSection img, .timeSection img {
+            height: 65%; /* Forza l'altezza dell'immagine al 65% del contenitore */
+            object-fit: contain; /* Mantiene il rapporto di aspetto */
+        }
+
+        .guestSection {
+            margin-left: 0; /* Rimuove il margine sinistro */
+        }
+
+        .guestSection select {
+            margin-left: 10px; /* Spazio tra dropdown e icona */
+            background: none;
+            border: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            color: #333; /* Colore del testo */
+            font-size: 16px;
+        }
+
+        .timeSection select {
+            margin-right: 10px; /* Spazio tra dropdown e icona */
+            background: none;
+            border: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            color: #333; /* Colore del testo */
+            font-size: 16px;
+        }
+
+        /* Rimuovi la label per il calendario */
+        .calendar label {
+            display: none;
+        }
+
+        /* Modifica la visibilità del calendario */
+        #calendar {
+            font-size: 16px;
+            padding: 0; /* Rimuove il padding */
+            margin: 0; /* Centra il calendario */
+            width: 90%; /* Imposta la larghezza del calendario al 90% */
+            box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
+        }
+
+        /* Impedisce che il calendario esca dai margini della mainSection */
+        .ui-datepicker {
+            width: 100% !important; /* Impedisce l'overflow laterale */
+        }
+    </style>
+
+    <!-- Inclusione di jQuery e jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+<body>
+
+    <div class="topSection">
+        <div class="guestSection">
+            <!-- Immagine icona ospiti -->
+            <img src="icon_guests.png" alt="Numero di persone" />
+            <select id="people" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+
+        <div class="timeSection">
+            <select id="time" required>
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="13:00">13:00</option>
+                <option value="19:00">19:00</option>
+                <option value="19:30">19:30</option>
+                <option value="20:00">20:00</option>
+                <option value="20:30">20:30</option>
+            </select>
+            <!-- Immagine icona orario -->
+            <img src="icon_clock.png" alt="Orario" />
+        </div>
+    </div>
+
+    <div class="mainSection">
+        <div class="calendar" id="calendar">
+            <!-- Calendario visibile di default -->
+        </div>
+    </div>
+
+    <div class="bottomSection">
+        <button type="button" onclick="submitReservation()">Prenota il Tavolo</button>
+    </div>
+
+    <div id="confirmation" class="confirmation" style="display: none;"></div>
+
+    <script>
+        $(document).ready(function() {
+            // Inizializzare il Datepicker su #calendar
+            $('#calendar').datepicker({
+                showAnim: 'fadeIn', // Animazione di apertura
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        function submitReservation() {
+            let date = $('#calendar').datepicker('getDate'); // Ottieni la data selezionata
+            let people = document.getElementById("people").value;
+            let time = document.getElementById("time").value;
+
+            if (!date || !people || !time) {
+                alert("Per favore, completa tutti i campi!");
+                return;
+            }
+
+            let confirmationMessage = `Prenotazione effettuata per il ${$.datepicker.formatDate('dd/mm/yy', date)} alle ${time} per ${people} persona/e.`;
+            document.getElementById("confirmation").innerText = confirmationMessage;
+            document.getElementById("confirmation").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
+

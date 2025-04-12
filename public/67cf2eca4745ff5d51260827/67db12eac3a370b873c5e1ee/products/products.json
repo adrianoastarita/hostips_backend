@@ -2,16 +2,16 @@
   {
     "id": 1,
     "nome": "Il giovane Holden",
-    "prezzo": 12
+    "prezzo": "12€"
   },
   {
     "id": 2,
     "nome": "Romeo e Giulietta",
-    "prezzo": 9
+    "prezzo": "9€"
   },
   {
     "id": 3,
     "nome": "Il piccolo principe",
-    "prezzo": 10
+    "prezzo": "10€"
   }
 ]

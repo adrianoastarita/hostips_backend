@@ -3,8 +3,8 @@
 const mongoose = require('mongoose');
 
 const host_schema = new mongoose.Schema({
-  nome: { type: String, required: true, trim: true },
-  Password: { type: String, required: true, trim: true },
+    nome: { type: String, required: true, trim: true },
+    password: { type: String, required: true, trim: true },
 });
 
 const Host = mongoose.model('Host', host_schema, 'hosts');

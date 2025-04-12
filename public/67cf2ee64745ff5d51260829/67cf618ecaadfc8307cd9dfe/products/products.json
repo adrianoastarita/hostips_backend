@@ -2,17 +2,17 @@
     {
       "id": 1,
       "nome": "Gommone",
-      "prezzo": 40
+      "prezzo": "40€/h"
     },
     {
       "id": 2,
       "nome": "SUP",
-      "prezzo": 10
+      "prezzo": "10€/h"
     },
     {
       "id": 3,
       "nome": "Pedalò",
-      "prezzo": 20
+      "prezzo": "20€/h"
     }
   ]
   

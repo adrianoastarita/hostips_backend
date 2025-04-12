@@ -1,59 +1,70 @@
 // server.js
 
-// Importo i moduli necessari
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
+const http = require('http'); // 👈 AGGIUNTO
+const { Server } = require('socket.io'); // 👈 AGGIUNTO
+
 const guest_loginRoutes = require('./routes/guest/login_routes');
 const guest_aptRoutes = require('./routes/guest/apt_routes');
+const guest_partnerRoutes = require('./routes/guest/partner_routes');
 const host_loginRoutes = require('./routes/host/login_routes');
 const host_addbookingRoutes = require('./routes/host/addbooking_routes');
-const path = require('path');  // Per gestire i percorsi dei file
+const path = require('path');
 
-// Carico le variabili di ambiente
 dotenv.config();
 
-// Creo una nuova app Express
 const app = express();
+const server = http.createServer(app); // 👈 CREA SERVER HTTP
+const io = new Server(server, {
+  cors: {
+    origin: '*', // 👈 imposta il dominio della tua app mobile qui se vuoi essere più sicuro
+    methods: ['GET', 'POST', 'DELETE'],
+  },
+});
 
 // Middleware
-app.use(cors()); // Abilita CORS per consentire richieste dal frontend
-app.use(bodyParser.json()); // Consente di fare il parsing delle richieste JSON
-
-// Servire i file statici dalla cartella 'public'
+app.use(cors());
+app.use(bodyParser.json());
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-// Connessione a MongoDB
+// Connessione al DB
 const connectDB = async () => {
   try {
-    // Rimuovi le opzioni deprecated
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Connesso a MongoDB');
   } catch (error) {
     console.error('Errore di connessione a MongoDB:', error.message);
-    process.exit(1); // Termina il processo in caso di errore
+    process.exit(1);
   }
 };
-
-// Connessione al database
 connectDB();
 
-// Aggiungiamo le rotte per la gestione del login (guest)
-app.use('/api', guest_loginRoutes);  // Nuovo nome del file delle rotte
+// Salviamo l'istanza di `io` in `app` per accedervi nelle route
+app.set('io', io);
 
-// Aggiungiamo le rotte per la gestione dei dati degli appartamenti
-app.use('/api', guest_aptRoutes);  // Nuovo nome del file delle rotte
+// Route
+app.use('/api', guest_loginRoutes);
+app.use('/api', guest_aptRoutes);
+app.use('/api', guest_partnerRoutes);
+app.use('/api', host_loginRoutes);
+app.use('/api', host_addbookingRoutes);
 
-// Aggiungiamo le rotte per la gestione del login (host)
-app.use('/api', host_loginRoutes);  // Nuovo nome del file delle rotte
+// 👇 Socket.IO eventi
+io.on('connection', (socket) => {
+  console.log('🔌 Client connesso:', socket.id);
 
-// Aggiungiamo le rotte per la gestione dei dati dell'host
-app.use('/api', host_addbookingRoutes);  // Nuovo nome del file delle rotte
-
-// Configurazione della porta
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server in ascolto sulla porta ${PORT}`);
+  socket.on('disconnect', () => {
+    console.log('❌ Client disconnesso:', socket.id);
+  });
 });
+
+// Server attivo
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`✅ Server in ascolto sulla porta ${PORT}`);
+});
+

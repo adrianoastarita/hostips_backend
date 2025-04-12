@@ -11,6 +11,7 @@ const { Server } = require('socket.io'); // 👈 AGGIUNTO
 const guest_loginRoutes = require('./routes/guest/login_routes');
 const guest_aptRoutes = require('./routes/guest/apt_routes');
 const guest_partnerRoutes = require('./routes/guest/partner_routes');
+const guest_restaurantRoutes = require('./routes/guest/restaurant_routes');
 const host_loginRoutes = require('./routes/host/login_routes');
 const host_addbookingRoutes = require('./routes/host/addbooking_routes');
 const path = require('path');
@@ -50,6 +51,7 @@ app.set('io', io);
 app.use('/api', guest_loginRoutes);
 app.use('/api', guest_aptRoutes);
 app.use('/api', guest_partnerRoutes);
+app.use('/api', guest_restaurantRoutes);
 app.use('/api', host_loginRoutes);
 app.use('/api', host_addbookingRoutes);
 

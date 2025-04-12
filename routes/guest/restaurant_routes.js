@@ -11,19 +11,12 @@ router.get('/get-reservations/:bookingID', async (req, res) => {
   try {
     const { bookingID } = req.params;
 
-    // Verifica se il partnerID è un ObjectId valido
     if (!mongoose.Types.ObjectId.isValid(bookingID)) {
       return res.status(400).json({ message: 'ID del guest non valido' });
     }
 
     // Cerca le prenotazioni nel database con l'ObjectId
-    const prenotazioni = await Prenotazioni.findById(bookingID);
-
-    if (!prenotazioni) {
-      return res.status(404).json({ message: 'Prenotazioni non trovate' });
-    }
-
-    // Restituisci solo il campo 'promozione'
+    const prenotazioni = await Prenotazioni.find({bookingID: new mongoose.Types.ObjectId(bookingID)});
     res.json(prenotazioni);
   } catch (error) {
     console.error('Errore durante il recupero delle prenotazioni:', error);
